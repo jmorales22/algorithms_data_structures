@@ -1,0 +1,32 @@
+
+WHAT IS AN ALGORITHM?
+A procss or set of steps to accomplish a certain task.
+
+UNDERSTAND THE PROBLEM (Strategies adapted from the book
+by George Polya - How to Solve It)
+
+1) Can I restate the problem in my own words?
+
+2) What are the inputs that go into the problem?
+
+3) What are the outputs that should come from 
+   the solution to the problem?
+
+4) Can the outputs be determined from the inputs? In 
+   other words, do you have enough information to solve 
+   the problem? (Yyou may not have enough info to answer 
+   this question until you set about solving the problem).
+
+5) How should I label the important pieces of data that are 
+   part of the problem?
+
+NOTES FOR PROBLEM SOLVING:
+
+- explicitly write down the steps you need to take
+- write some psuedo code
+- start with simple examples
+- progress to more complex examples
+- edge cases - explore examples with empty inputs
+- explore examples with invalid inputs
+- solve/simplify
+- look back and refactor
