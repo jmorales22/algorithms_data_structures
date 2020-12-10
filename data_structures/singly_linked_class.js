@@ -79,6 +79,68 @@ class SinglyLinkedList {
     this.length++;
     return this;
   }
+  //retrieving a node by it's position in a singly linked list
+  get(index) {
+    if (index < 0 || index >= this.length) return null;
+    var counter = 0;
+    var current = this.head;
+    while (counter != index) {
+      current = current.next;
+      counter++;
+    }
+    return current;
+  }
+  //changin the value of a node based on it's position in the linked list
+  set(index, val) {
+    var foundNode = this.get(index);
+    if (foundNode) {
+      foundNode.val = val;
+      return true;
+    }
+    return false;
+  }
+  //adds a node to the linked list at a specific position
+  insert(index, val) {
+    if (index < 0 || index > this.length) return false;
+    if (index === this.length) return !!this.push(val);
+    if (index === 0) return !!this.unshift(val);
+
+    var newNode = new Node(val);
+    var prev = this.get(index - 1);
+    var temp = prev.next;
+    prev.next = newNode;
+    newNode.next = -temp;
+    this.length++;
+    return true;
+  }
+  //removing a node from the linked list at a specific position
+  remove(index) {
+    if (index < 0 || index >= this.length) return undefined;
+    if (index === 0) return this.shift();
+    if (index === this.length - 1) return this.pop;
+
+    var previousNode = this.get(index - 1);
+    var removed = previousNode.next;
+    previousNode.next = removed.next;
+    this.length--;
+    return removed;
+  }
+  //reversing the linked list in place
+  reverse() {
+    var node = this.head;
+    this.head = this.tail;
+    this.tail = node;
+    var previous = null;
+    var next = null;
+
+    for (var i = 0; i < this.length; i++) {
+      next = node.next;
+      node.next = previous;
+      previous = node;
+      node = next;
+    }
+    return this;
+  }
 }
 
 var list = new SinglyLinkedList();
